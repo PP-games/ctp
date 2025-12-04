@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Coyote Time Publishing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #a29bfe;
+            --accent: #00cec9;
+            --dark: #0a0a0f;
+            --dark-lighter: #12121a;
+            --dark-card: #1a1a25;
+            --text: #ffffff;
+            --text-muted: #8b8b9e;
+            --gradient-primary: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .intro {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        a {
+            color: var(--primary-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            main {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">PUBLISHER</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: December 2024</p>
+        <p class="intro">This Privacy Policy explains how Coyote Time Publishing Oy ("we", "us", or "our") collects, uses, and protects your personal information when you use our website and subscribe to our mailing list.</p>
+
+        <h2>1. Data Controller</h2>
+        <p>The data controller responsible for your personal data is:</p>
+        <p>
+            Coyote Time Publishing Oy<br>
+            [Address]<br>
+            [Business ID / Y-tunnus]<br>
+            Email: [your email]
+        </p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We collect the following personal information when you subscribe to our mailing list:</p>
+        <ul>
+            <li>Email address</li>
+        </ul>
+        <p>We do not collect any other personal data through our subscription form.</p>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your email address for the following purposes:</p>
+        <ul>
+            <li>To send you updates about new indie game releases</li>
+            <li>To notify you about exclusive early access opportunities</li>
+            <li>To share news and announcements related to our publishing activities</li>
+        </ul>
+
+        <h2>4. Legal Basis for Processing (GDPR)</h2>
+        <p>Under the General Data Protection Regulation (GDPR), we process your personal data based on:</p>
+        <ul>
+            <li><strong>Consent:</strong> By submitting your email address through our subscription form and confirming via double opt-in, you consent to receiving our newsletter and marketing communications.</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <p>We retain your email address for as long as you remain subscribed to our mailing list. If you unsubscribe, your email address will be permanently deleted from our systems within 30 days.</p>
+
+        <h2>6. Your Rights</h2>
+        <p>Under GDPR, you have the following rights regarding your personal data:</p>
+        <ul>
+            <li><strong>Right to Access:</strong> You can request a copy of the personal data we hold about you.</li>
+            <li><strong>Right to Rectification:</strong> You can request correction of inaccurate personal data.</li>
+            <li><strong>Right to Erasure:</strong> You can request deletion of your personal data.</li>
+            <li><strong>Right to Withdraw Consent:</strong> You can unsubscribe from our mailing list at any time by clicking the unsubscribe link in any email or by contacting us directly.</li>
+            <li><strong>Right to Data Portability:</strong> You can request your data in a machine-readable format.</li>
+            <li><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with the Finnish Data Protection Ombudsman (Tietosuojavaltuutetun toimisto, <a href="https://tietosuoja.fi" target="_blank" rel="noopener">tietosuoja.fi</a>) or another EU supervisory authority.</li>
+        </ul>
+
+        <h2>7. Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+
+        <h2>8. Third-Party Services</h2>
+        <p>We use Mailchimp (The Rocket Science Group LLC, a subsidiary of Intuit Inc.) to manage our mailing list and send emails. Mailchimp stores data on servers in the United States. This data transfer is protected under Standard Contractual Clauses approved by the European Commission. Mailchimp processes your data only according to our instructions. You can review Mailchimp's privacy practices at <a href="https://mailchimp.com/legal/privacy" target="_blank" rel="noopener">mailchimp.com/legal/privacy</a>.</p>
+
+        <h2>9. Cookies and Tracking</h2>
+        <p>Our website uses minimal cookies. Mailchimp may set cookies when you interact with our subscription forms and may track email opens and link clicks to help us understand engagement. You can disable image loading in your email client to prevent open tracking.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at:</p>
+        <p>Email: [your email]</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">PUBLISHER</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <p class="footer-copyright">&copy; 2025 Publisher. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
