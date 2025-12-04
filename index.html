@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coyote Time Publishing</title>
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <title>Indie Game Publisher | Discover Extraordinary Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,201 +14,363 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #a29bfe;
+            --accent: #00cec9;
+            --dark: #0a0a0f;
+            --dark-lighter: #12121a;
+            --dark-card: #1a1a25;
+            --text: #ffffff;
+            --text-muted: #8b8b9e;
+            --gradient-primary: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            --gradient-accent: linear-gradient(135deg, #00cec9 0%, #81ecec 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+            display: flex;
             justify-content: center;
-            padding: 20px;
-            color: #333;
+            align-items: center;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .container {
-            max-width: 500px;
-            width: 100%;
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .header {
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 30px;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header h1 {
-            color: #f5f5f5;
-            font-size: 2.2rem;
-            font-weight: normal;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(108, 92, 231, 0.15) 0%, transparent 60%);
+            pointer-events: none;
         }
 
-        .header p {
-            color: #b8b8b8;
-            font-size: 1.1rem;
-            font-style: italic;
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--dark) 0%, transparent 100%);
+            pointer-events: none;
         }
 
-        /* Mailchimp Form Overrides */
-        #mc_embed_signup {
-            background: #fff !important;
-            border-radius: 12px;
-            padding: 40px !important;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            width: 100% !important;
-            clear: both !important;
-            font: 16px Georgia, serif !important;
-        }
-
-        #mc_embed_signup h2 {
-            font-size: 1.5rem !important;
-            color: #1a1a2e !important;
-            margin-bottom: 20px !important;
-            font-weight: normal !important;
-            text-align: center;
-        }
-
-        #mc_embed_signup .indicates-required {
-            text-align: right;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(108, 92, 231, 0.1);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            border-radius: 50px;
             font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 15px;
+            color: var(--primary-light);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
         }
 
-        #mc_embed_signup .mc-field-group {
-            margin-bottom: 20px !important;
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
 
-        #mc_embed_signup .mc-field-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-size: 0.95rem;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
-        #mc_embed_signup .mc-field-group input[type="email"] {
-            width: 100% !important;
-            padding: 14px 16px !important;
-            border: 2px solid #e0e0e0 !important;
-            border-radius: 8px !important;
-            font-size: 1rem !important;
-            font-family: Georgia, serif !important;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.1s both;
         }
 
-        #mc_embed_signup .mc-field-group input[type="email"]:focus {
-            outline: none !important;
-            border-color: #0f3460 !important;
-            box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.1) !important;
+        .hero h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        #mc_embed_signup .button {
-            width: 100% !important;
-            background: #0f3460 !important;
-            color: #fff !important;
-            border: none !important;
-            padding: 16px 24px !important;
-            font-size: 1.1rem !important;
-            font-family: Georgia, serif !important;
-            border-radius: 8px !important;
-            cursor: pointer !important;
-            transition: background 0.3s ease, transform 0.2s ease !important;
-            letter-spacing: 1px;
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
-        #mc_embed_signup .button:hover {
-            background: #1a1a2e !important;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Email CTA Form */
+        .cta-container {
+            position: relative;
+            z-index: 10;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 1rem 1.25rem;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .email-form input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .email-form button {
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .email-form button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
         }
 
-        #mc_embed_signup .asterisk {
+        .cta-note {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Mailchimp Response Messages */
+        #mce-responses {
+            margin-top: 1rem;
+        }
+
+        #mce-responses .response {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        #mce-error-response {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
             color: #e74c3c;
         }
 
-        #mc_embed_signup #mce-responses {
-            margin-top: 15px;
+        #mce-success-response {
+            background: rgba(0, 206, 201, 0.1);
+            border: 1px solid rgba(0, 206, 201, 0.3);
+            color: var(--accent);
         }
 
-        #mc_embed_signup .response {
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-        }
-
-        #mc_embed_signup #mce-error-response {
-            background: #fdeaea;
-            color: #c0392b;
-        }
-
-        #mc_embed_signup #mce-success-response {
-            background: #e8f5e9;
-            color: #27ae60;
-        }
-
-        .footer {
+        /* Footer */
+        footer {
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-            margin-top: 30px;
-            color: #888;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
             font-size: 0.85rem;
         }
 
-        .footer a {
-            color: #b8b8b8;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.6rem;
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
             }
 
-            #mc_embed_signup {
-                padding: 25px !important;
+            .hero {
+                padding: 6rem 1.5rem 4rem;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form button {
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Coyote Time Publishing</h1>
-            <p>Stories worth the wait</p>
-        </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">PUBLISHER</div>
+    </nav>
 
-        <div id="mc_embed_shell">
-            <div id="mc_embed_signup">
-                <form action="https://coyotetimepublishing.us13.list-manage.com/subscribe/post?u=51efcecec010cd1ad916c32f8&amp;id=f89b7b069b&amp;f_id=00c80ce3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-                    <div id="mc_embed_signup_scroll">
-                        <h2>Join Our Mailing List</h2>
-                        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                        <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="your@email.com">
-                        </div>
-                        <div id="mce-responses" class="clear">
-                            <div class="response" id="mce-error-response" style="display: none;"></div>
-                            <div class="response" id="mce-success-response" style="display: none;"></div>
-                        </div>
-                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                            <input type="text" name="b_51efcecec010cd1ad916c32f8_f89b7b069b" tabindex="-1" value="">
-                        </div>
-                        <div class="clear">
-                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                        </div>
-                    </div>
-                </form>
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">Now Publishing Indie Titles</span>
+        <h1>We Bring <span>Extraordinary</span><br>Indie Games to Life</h1>
+        <p class="hero-description">Join our community of passionate gamers and be the first to discover groundbreaking indie titles before anyone else.</p>
+
+        <div class="cta-container">
+            <form class="email-form" action="https://coyotetimepublishing.us13.list-manage.com/subscribe/post?u=51efcecec010cd1ad916c32f8&amp;id=f89b7b069b&amp;f_id=00c80ce3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email address" required>
+                <button type="submit" name="subscribe" id="mc-embedded-subscribe">Get Early Access</button>
+                <!-- Bot protection -->
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_51efcecec010cd1ad916c32f8_f89b7b069b" tabindex="-1" value="">
+                </div>
+            </form>
+            <p class="cta-note">No spam, ever. Unsubscribe anytime.</p>
+            <div id="mce-responses">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
             </div>
         </div>
+    </section>
 
-        <footer class="footer">
-            <p>We respect your privacy. Unsubscribe anytime.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">PUBLISHER</div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+            <p class="footer-copyright">&copy; 2025 Publisher. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <!-- Mailchimp Validation -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
         (function($) {
@@ -221,6 +385,16 @@
             fnames[6]='COMPANY'; ftypes[6]='text';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 10, 15, 0.95)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 15, 0.8)';
+            }
+        });
     </script>
 </body>
 </html>
