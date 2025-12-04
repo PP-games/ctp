@@ -227,28 +227,33 @@
             color: var(--text-muted);
         }
 
-        /* Mailchimp Response Messages */
-        #mce-responses {
+        /* Form Messages */
+        .form-message {
             margin-top: 1rem;
-        }
-
-        #mce-responses .response {
             padding: 1rem 2rem;
             border-radius: 12px;
             font-weight: 500;
             text-align: center;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        #mce-error-response {
+        .form-message.success {
+            background: rgba(0, 206, 201, 0.1);
+            border: 1px solid rgba(0, 206, 201, 0.3);
+            color: var(--accent);
+        }
+
+        .form-message.error {
             background: rgba(231, 76, 60, 0.1);
             border: 1px solid rgba(231, 76, 60, 0.3);
             color: #e74c3c;
         }
 
-        #mce-success-response {
-            background: rgba(0, 206, 201, 0.1);
-            border: 1px solid rgba(0, 206, 201, 0.3);
-            color: var(--accent);
+        .email-form button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
         /* Footer */
@@ -341,21 +346,12 @@
         <p class="hero-description">Join our community of passionate gamers and be the first to discover groundbreaking indie titles before anyone else.</p>
 
         <div class="cta-container">
-            <form class="email-form" action="https://coyotetimepublishing.us13.list-manage.com/subscribe/post?u=51efcecec010cd1ad916c32f8&amp;id=f89b7b069b&amp;f_id=00c80ce3f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-                <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email address" required>
-                <button type="submit" name="subscribe" id="mc-embedded-subscribe">Get Early Access</button>
-                <!-- Hidden tag -->
-                <div hidden><input type="hidden" name="tags" value="7050850"></div>
-                <!-- Bot protection -->
-                <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                    <input type="text" name="b_51efcecec010cd1ad916c32f8_f89b7b069b" tabindex="-1" value="">
-                </div>
+            <form class="email-form" id="subscribe-form">
+                <input type="email" name="email" id="email-input" placeholder="Enter your email address" required>
+                <button type="submit" id="submit-btn">Get Early Access</button>
             </form>
             <p class="cta-note">No spam, ever. Unsubscribe anytime.</p>
-            <div id="mce-responses">
-                <div class="response" id="mce-error-response" style="display: none;"></div>
-                <div class="response" id="mce-success-response" style="display: none;"></div>
-            </div>
+            <div id="form-message" class="form-message" style="display: none;"></div>
         </div>
     </section>
 
@@ -378,6 +374,60 @@
                 nav.style.background = 'rgba(10, 10, 15, 0.95)';
             } else {
                 nav.style.background = 'rgba(10, 10, 15, 0.8)';
+            }
+        });
+
+        // Email subscription form handler
+        const form = document.getElementById('subscribe-form');
+        const emailInput = document.getElementById('email-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            if (!email) return;
+
+            // Disable form while submitting
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Subscribing...';
+            formMessage.style.display = 'none';
+
+            try {
+                const response = await fetch('/.netlify/functions/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        tags: ['7050850'] // Website signup tag
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Success
+                    formMessage.textContent = data.message || 'Thanks! Check your email to confirm.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    emailInput.value = '';
+                } else {
+                    // Error from our API
+                    formMessage.textContent = data.error || 'Something went wrong. Please try again.';
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                }
+            } catch (error) {
+                // Network or other error
+                formMessage.textContent = 'Connection error. Please try again.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Early Access';
             }
         });
     </script>
