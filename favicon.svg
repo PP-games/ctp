@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A855F7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#0a0a0f"/>
+
+  <!-- Knight's helmet base -->
+  <path d="M 32 12 L 38 18 L 38 38 L 32 42 L 26 38 L 26 18 Z" fill="url(#goldGradient)" stroke="#B8860B" stroke-width="0.5"/>
+
+  <!-- Helmet visor -->
+  <rect x="27" y="24" width="10" height="8" fill="#1a1a25" rx="1"/>
+
+  <!-- Helmet crest/plume -->
+  <path d="M 28 12 Q 32 8 36 12" fill="none" stroke="url(#purpleGradient)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Helmet details - horizontal bands -->
+  <line x1="26" y1="22" x2="38" y2="22" stroke="#B8860B" stroke-width="0.5"/>
+  <line x1="26" y1="33" x2="38" y2="33" stroke="#B8860B" stroke-width="0.5"/>
+
+  <!-- Side details -->
+  <circle cx="26" cy="28" r="1.5" fill="#B8860B"/>
+  <circle cx="38" cy="28" r="1.5" fill="#B8860B"/>
+
+  <!-- Chin guard -->
+  <path d="M 28 38 Q 32 40 36 38" fill="url(#goldGradient)" stroke="#B8860B" stroke-width="0.5"/>
+
+  <!-- Small star accent -->
+  <path d="M 32 48 L 33 50 L 35 50 L 33.5 51.5 L 34 53.5 L 32 52 L 30 53.5 L 30.5 51.5 L 29 50 L 31 50 Z" fill="#FFD700" opacity="0.6"/>
+</svg>
