@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indie Game Publisher | Discover Extraordinary Games</title>
+    <title>Coyote Time Publishing | Discover Extraordinary Indie Games</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -168,92 +168,17 @@
             }
         }
 
-        /* Email CTA Form */
-        .cta-container {
-            position: relative;
-            z-index: 10;
-            animation: fadeInUp 0.8s ease 0.3s both;
+        /* Hero Logo */
+        .hero-logo {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease both;
         }
 
-        .email-form {
-            display: flex;
-            gap: 0.75rem;
-            padding: 0.5rem;
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            max-width: 500px;
-            margin: 0 auto;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .email-form input {
-            flex: 1;
-            padding: 1rem 1.25rem;
-            background: transparent;
-            border: none;
-            outline: none;
-            color: var(--text);
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .email-form input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .email-form button {
-            padding: 1rem 2rem;
-            background: var(--gradient-primary);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            font-family: inherit;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .email-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
-        }
-
-        .cta-note {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Form Messages */
-        .form-message {
-            margin-top: 1rem;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-weight: 500;
-            text-align: center;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .form-message.success {
-            background: rgba(0, 206, 201, 0.1);
-            border: 1px solid rgba(0, 206, 201, 0.3);
-            color: var(--accent);
-        }
-
-        .form-message.error {
-            background: rgba(231, 76, 60, 0.1);
-            border: 1px solid rgba(231, 76, 60, 0.3);
-            color: #e74c3c;
-        }
-
-        .email-form button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
+        .logo-image {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 50px rgba(108, 92, 231, 0.3));
         }
 
         /* Footer */
@@ -314,12 +239,8 @@
                 padding: 6rem 1.5rem 4rem;
             }
 
-            .email-form {
-                flex-direction: column;
-            }
-
-            .email-form button {
-                width: 100%;
+            .logo-image {
+                max-width: 100%;
             }
 
             .footer-content {
@@ -336,33 +257,27 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">PUBLISHER</div>
+        <div class="logo">COYOTE TIME PUBLISHING</div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-logo">
+            <img src="assets/logo.png" alt="Coyote Time Publishing" class="logo-image">
+        </div>
         <span class="hero-badge">Now Publishing Indie Titles</span>
         <h1>We Bring <span>Extraordinary</span><br>Indie Games to Life</h1>
-        <p class="hero-description">Join our community of passionate gamers and be the first to discover groundbreaking indie titles before anyone else.</p>
-
-        <div class="cta-container">
-            <form class="email-form" id="subscribe-form">
-                <input type="email" name="email" id="email-input" placeholder="Enter your email address" required>
-                <button type="submit" id="submit-btn">Get Early Access</button>
-            </form>
-            <p class="cta-note">No spam, ever. Unsubscribe anytime.</p>
-            <div id="form-message" class="form-message" style="display: none;"></div>
-        </div>
+        <p class="hero-description">Discover groundbreaking indie titles from passionate creators around the world.</p>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">PUBLISHER</div>
+            <div class="footer-logo">COYOTE TIME PUBLISHING</div>
             <ul class="footer-links">
                 <li><a href="privacy.html">Privacy</a></li>
             </ul>
-            <p class="footer-copyright">&copy; 2025 Publisher. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2025 Coyote Time Publishing Oy. All rights reserved.</p>
         </div>
     </footer>
 
@@ -374,60 +289,6 @@
                 nav.style.background = 'rgba(10, 10, 15, 0.95)';
             } else {
                 nav.style.background = 'rgba(10, 10, 15, 0.8)';
-            }
-        });
-
-        // Email subscription form handler
-        const form = document.getElementById('subscribe-form');
-        const emailInput = document.getElementById('email-input');
-        const submitBtn = document.getElementById('submit-btn');
-        const formMessage = document.getElementById('form-message');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const email = emailInput.value.trim();
-            if (!email) return;
-
-            // Disable form while submitting
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Subscribing...';
-            formMessage.style.display = 'none';
-
-            try {
-                const response = await fetch('/.netlify/functions/subscribe', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        tags: ['7050850'] // Website signup tag
-                    }),
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    // Success
-                    formMessage.textContent = data.message || 'Thanks! Check your email to confirm.';
-                    formMessage.className = 'form-message success';
-                    formMessage.style.display = 'block';
-                    emailInput.value = '';
-                } else {
-                    // Error from our API
-                    formMessage.textContent = data.error || 'Something went wrong. Please try again.';
-                    formMessage.className = 'form-message error';
-                    formMessage.style.display = 'block';
-                }
-            } catch (error) {
-                // Network or other error
-                formMessage.textContent = 'Connection error. Please try again.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Get Early Access';
             }
         });
     </script>
