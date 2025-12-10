@@ -64,21 +64,19 @@
             width: 100%;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: relative;
         }
 
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .nav-logo {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
+            position: absolute;
+            right: 0;
             display: flex;
             gap: 2rem;
             list-style: none;
@@ -277,13 +275,23 @@
             animation: twinkle 4s ease-in-out infinite;
         }
 
-        /* Nihti Mascot - positioned in hero section */
-        .nihti-mascot {
+        /* Hero Bottom - Nihti + Text side by side */
+        .hero-bottom {
             position: absolute;
-            bottom: -100px;
-            left: -50px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 0 2rem;
             z-index: 10;
-            pointer-events: none;
+        }
+
+        .nihti-mascot {
+            flex-shrink: 0;
+            margin-left: -50px;
+            margin-bottom: -100px;
         }
 
         .nihti-mascot-image {
@@ -291,11 +299,42 @@
             height: auto;
         }
 
+        .hero-text {
+            padding: 2rem 0 4rem 1rem;
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-align: left;
+            line-height: 1.5;
+        }
+
         /* Ultra-wide screens - bring closer to main body */
         @media (min-width: 1800px) {
+            .hero-bottom {
+                justify-content: center;
+                padding-left: 0;
+            }
             .nihti-mascot {
-                left: calc(50% - 750px);
-                bottom: -120px;
+                margin-left: -100px;
             }
             .nihti-mascot-image {
                 width: 650px;
@@ -303,10 +342,6 @@
         }
 
         @media (min-width: 2400px) {
-            .nihti-mascot {
-                left: calc(50% - 850px);
-                bottom: -140px;
-            }
             .nihti-mascot-image {
                 width: 750px;
             }
@@ -539,24 +574,47 @@
                 justify-content: center;
             }
 
+            .nav-links {
+                position: static;
+            }
+
+            .hero-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 1rem;
+            }
+
             .nihti-mascot {
-                left: -80px;
-                bottom: -60px;
+                margin-left: -80px;
+                margin-bottom: -60px;
             }
 
             .nihti-mascot-image {
                 width: 350px;
             }
+
+            .hero-text {
+                padding: 1rem 0 3rem 0;
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
             .nihti-mascot {
-                left: -100px;
-                bottom: -40px;
+                margin-left: -100px;
+                margin-bottom: -40px;
             }
 
             .nihti-mascot-image {
                 width: 280px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -585,7 +643,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">COYOTE TIME PUBLISHING</div>
+            <img src="assets/cpt_logo_small.png" alt="Coyote Time Publishing" class="nav-logo">
             <ul class="nav-links">
                 <li><a href="#games">Games</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -596,15 +654,19 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-logo">
-            <img src="assets/cpt_logo_small.png" alt="Coyote Time Publishing" class="logo-image">
+            <img src="assets/cpt_logo3.png" alt="Coyote Time Publishing" class="logo-image">
         </div>
         <span class="hero-badge">Now Publishing Indie Titles</span>
-        <h1>We Bring <span>Extraordinary</span><br>Indie Games to Life</h1>
-        <p class="hero-description">Discover groundbreaking indie titles from passionate creators around the world.</p>
 
-        <!-- Nihti Mascot -->
-        <div class="nihti-mascot">
-            <img src="assets/nihti_logo.webp" alt="Nihti" class="nihti-mascot-image">
+        <!-- Nihti + Text side by side -->
+        <div class="hero-bottom">
+            <div class="nihti-mascot">
+                <img src="assets/nihti_logo.webp" alt="Nihti" class="nihti-mascot-image">
+            </div>
+            <div class="hero-text">
+                <h1>We Bring <span>Extraordinary</span><br>Indie Games to Life</h1>
+                <p>Discover groundbreaking indie titles from passionate creators around the world.</p>
+            </div>
         </div>
     </section>
 
