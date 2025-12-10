@@ -51,21 +51,11 @@
             z-index: 1000;
             padding: 1.5rem 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             background: rgba(10, 10, 15, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 100%;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .logo {
@@ -76,24 +66,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text);
         }
 
         /* Hero Section */
@@ -216,6 +188,47 @@
             max-width: 400px;
         }
 
+        /* Nihti Mascot Section */
+        .nihti-mascot {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background: var(--dark-lighter);
+        }
+
+        .nihti-mascot-image {
+            position: absolute;
+            left: -100px;
+            bottom: -50px;
+            width: 800px;
+            height: auto;
+            opacity: 0.9;
+        }
+
+        /* Ultra-wide screens */
+        @media (min-width: 1800px) {
+            .nihti-mascot {
+                height: 500px;
+            }
+            .nihti-mascot-image {
+                width: 1000px;
+                left: calc(50% - 900px);
+                bottom: -80px;
+            }
+        }
+
+        @media (min-width: 2400px) {
+            .nihti-mascot {
+                height: 600px;
+            }
+            .nihti-mascot-image {
+                width: 1200px;
+                left: calc(50% - 1000px);
+                bottom: -100px;
+            }
+        }
+
         /* Star Background */
         .stars-container {
             position: fixed;
@@ -277,95 +290,19 @@
             animation: twinkle 4s ease-in-out infinite;
         }
 
-        /* Games Showcase Section */
-        .games-section {
-            padding: 6rem 2rem;
-            background: var(--dark-lighter);
-            position: relative;
-        }
-
-        .games-section h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .games-section h2 span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .games-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .game-card {
-            background: var(--dark-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .game-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
-        }
-
-        .game-card-image {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-card) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .game-card-content {
-            padding: 1.5rem;
-        }
-
-        .game-card-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .game-card-description {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
         /* Footer */
         footer {
-            padding: 4rem 2rem 2rem;
+            padding: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: var(--dark);
+            text-align: center;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
         }
 
@@ -379,24 +316,9 @@
             background-clip: text;
         }
 
-        .footer-tagline {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .footer-section h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
-
         .footer-links {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            gap: 2rem;
             list-style: none;
         }
 
@@ -411,38 +333,6 @@
             color: var(--text);
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            color: var(--text);
-            border-color: var(--primary);
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-        }
-
         .footer-copyright {
             color: var(--text-muted);
             font-size: 0.85rem;
@@ -454,17 +344,8 @@
                 padding: 1rem;
             }
 
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
             .hero {
-                padding: 7rem 1.5rem 4rem;
+                padding: 6rem 1.5rem 4rem;
             }
 
             .logo-image {
@@ -475,32 +356,22 @@
                 max-width: 280px;
             }
 
-            .games-section {
-                padding: 4rem 1.5rem;
+            .nihti-mascot {
+                height: 250px;
             }
 
-            .games-grid {
-                grid-template-columns: 1fr;
+            .nihti-mascot-image {
+                width: 500px;
+                left: -80px;
+                bottom: -30px;
             }
 
             .footer-content {
-                grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .footer-brand {
-                align-items: center;
-            }
-
-            .footer-section {
-                align-items: center;
-            }
-
             .footer-links {
-                align-items: center;
-            }
-
-            .social-links {
+                flex-wrap: wrap;
                 justify-content: center;
             }
         }
@@ -529,85 +400,31 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <div class="logo">COYOTE TIME PUBLISHING</div>
-            <ul class="nav-links">
-                <li><a href="#games">Games</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <div class="logo">COYOTE TIME PUBLISHING</div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-logo">
             <img src="assets/cpt_logo.png" alt="Coyote Time Publishing" class="logo-image">
-            <img src="assets/nihti_logo.webp" alt="Nihti" class="logo-image nihti">
         </div>
         <span class="hero-badge">Now Publishing Indie Titles</span>
         <h1>We Bring <span>Extraordinary</span><br>Indie Games to Life</h1>
         <p class="hero-description">Discover groundbreaking indie titles from passionate creators around the world.</p>
     </section>
 
-    <!-- Games Showcase Section -->
-    <section class="games-section" id="games">
-        <h2>Our <span>Games</span></h2>
-        <div class="games-grid">
-            <div class="game-card">
-                <div class="game-card-image">Coming Soon</div>
-                <div class="game-card-content">
-                    <h3 class="game-card-title">Game Title 1</h3>
-                    <p class="game-card-description">An exciting indie adventure awaits. Stay tuned for more details.</p>
-                </div>
-            </div>
-            <div class="game-card">
-                <div class="game-card-image">Coming Soon</div>
-                <div class="game-card-content">
-                    <h3 class="game-card-title">Game Title 2</h3>
-                    <p class="game-card-description">A unique gaming experience in development. More info coming soon.</p>
-                </div>
-            </div>
-            <div class="game-card">
-                <div class="game-card-image">Coming Soon</div>
-                <div class="game-card-content">
-                    <h3 class="game-card-title">Game Title 3</h3>
-                    <p class="game-card-description">Another extraordinary title on its way. Watch this space.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Nihti Mascot -->
+    <div class="nihti-mascot">
+        <img src="assets/nihti_logo.webp" alt="Nihti" class="nihti-mascot-image">
+    </div>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">COYOTE TIME PUBLISHING</div>
-                <p class="footer-tagline">Bringing extraordinary indie games to life. We partner with passionate creators to publish groundbreaking titles.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-                    <a href="#" class="social-link" aria-label="Discord">D</a>
-                    <a href="#" class="social-link" aria-label="YouTube">▶</a>
-                    <a href="#" class="social-link" aria-label="Instagram">◎</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#games">Games</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Press Kit</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul class="footer-links">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
+            <div class="footer-logo">COYOTE TIME PUBLISHING</div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
             <p class="footer-copyright">&copy; 2025 Coyote Time Publishing Oy. All rights reserved.</p>
         </div>
     </footer>
