@@ -277,12 +277,12 @@
             animation: twinkle 4s ease-in-out infinite;
         }
 
-        /* Fixed Nihti Mascot */
+        /* Nihti Mascot - positioned in hero section */
         .nihti-mascot {
-            position: fixed;
-            bottom: 0;
-            left: 20px;
-            z-index: 100;
+            position: absolute;
+            bottom: -100px;
+            left: -50px;
+            z-index: 10;
             pointer-events: none;
         }
 
@@ -294,7 +294,8 @@
         /* Ultra-wide screens - bring closer to main body */
         @media (min-width: 1800px) {
             .nihti-mascot {
-                left: calc(50% - 800px);
+                left: calc(50% - 750px);
+                bottom: -120px;
             }
             .nihti-mascot-image {
                 width: 650px;
@@ -303,7 +304,8 @@
 
         @media (min-width: 2400px) {
             .nihti-mascot {
-                left: calc(50% - 900px);
+                left: calc(50% - 850px);
+                bottom: -140px;
             }
             .nihti-mascot-image {
                 width: 750px;
@@ -538,7 +540,8 @@
             }
 
             .nihti-mascot {
-                left: -50px;
+                left: -80px;
+                bottom: -60px;
             }
 
             .nihti-mascot-image {
@@ -548,7 +551,8 @@
 
         @media (max-width: 480px) {
             .nihti-mascot {
-                left: -80px;
+                left: -100px;
+                bottom: -40px;
             }
 
             .nihti-mascot-image {
@@ -578,11 +582,6 @@
         <div class="star four-point large" style="top: 70%; left: 25%;"></div>
     </div>
 
-    <!-- Fixed Nihti Mascot -->
-    <div class="nihti-mascot">
-        <img src="assets/nihti_logo.webp" alt="Nihti" class="nihti-mascot-image">
-    </div>
-
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -597,11 +596,16 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-logo">
-            <img src="assets/cpt_logo.png" alt="Coyote Time Publishing" class="logo-image">
+            <img src="assets/cpt_logo_small.png" alt="Coyote Time Publishing" class="logo-image">
         </div>
         <span class="hero-badge">Now Publishing Indie Titles</span>
         <h1>We Bring <span>Extraordinary</span><br>Indie Games to Life</h1>
         <p class="hero-description">Discover groundbreaking indie titles from passionate creators around the world.</p>
+
+        <!-- Nihti Mascot -->
+        <div class="nihti-mascot">
+            <img src="assets/nihti_logo.webp" alt="Nihti" class="nihti-mascot-image">
+        </div>
     </section>
 
     <!-- Games Showcase Section -->
