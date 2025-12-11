@@ -23,7 +23,7 @@
             --dark-card: #1a1a25;
             --text: #ffffff;
             --text-muted: #8b8b9e;
-            --gradient-primary: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+            --gradient-primary: linear-gradient(135deg, #d4a017 0%, #f0c850 100%);
         }
 
         html {
@@ -57,14 +57,13 @@
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
+            display: block;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            opacity: 0.85;
         }
 
         /* Main Content */
@@ -104,7 +103,7 @@
             font-weight: 600;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--text);
+            color: #D4CFC5;
         }
 
         p {
@@ -154,13 +153,8 @@
         }
 
         .footer-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            height: 80px;
+            width: auto;
         }
 
         .footer-links {
@@ -206,7 +200,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">COYOTE TIME PUBLISHING</a>
+        <a href="index.html" class="logo"><img src="assets/cpt_logo_small.png" alt="Coyote Time Publishing"></a>
     </nav>
 
     <!-- Main Content -->
@@ -272,7 +266,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">COYOTE TIME PUBLISHING</div>
+            <img src="assets/cpt_logo_small.png" alt="Coyote Time Publishing" class="footer-logo">
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
             </ul>
