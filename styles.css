@@ -173,7 +173,7 @@ nav {
 
 .star {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.13;
 }
 
 .star::before,
@@ -212,8 +212,8 @@ nav {
 .star.large { width: 35px; height: 35px; }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.094; }
-    50% { opacity: 0.28; }
+    0%, 100% { opacity: 0.08; }
+    50% { opacity: 0.24; }
 }
 
 .star.twinkle {
@@ -344,7 +344,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at left top, rgba(172, 77, 178, 0.5) 0%, transparent 30%);
+    background: radial-gradient(ellipse at top center, rgba(171, 77, 178, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
