@@ -527,7 +527,34 @@
             font-size: 0.85rem;
         }
 
-        /* Responsive */
+        /* Responsive - Tablet */
+        @media (max-width: 1024px) {
+            .hero-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                top: 30%;
+            }
+
+            .nihti-mascot {
+                margin-left: -60px;
+                margin-bottom: -80px;
+            }
+
+            .nihti-mascot-image {
+                width: 450px;
+            }
+
+            .hero-text {
+                padding: 1rem 0 2rem 1rem;
+                max-width: 90%;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Responsive - Mobile */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem;
@@ -544,7 +571,8 @@
 
             .hero {
                 padding: 7rem 1.5rem 4rem;
-                min-height: 70vh;
+                min-height: auto;
+                padding-bottom: 2rem;
             }
 
             .logo-image {
@@ -589,10 +617,12 @@
             }
 
             .hero-bottom {
+                position: relative;
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 0 1rem;
-                top: 32%;
+                top: auto;
+                margin-top: 1rem;
             }
 
             .nihti-mascot {
