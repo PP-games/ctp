@@ -279,7 +279,7 @@
         .hero-bottom {
             position: absolute;
             bottom: auto;
-            top: 28%;
+            top: 38%;
             left: 0;
             right: 0;
             display: flex;
@@ -298,6 +298,8 @@
         .nihti-mascot-image {
             width: 560px;
             height: auto;
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
         }
 
         .hero-text {
@@ -542,6 +544,7 @@
 
             .hero {
                 padding: 7rem 1.5rem 4rem;
+                min-height: 60vh;
             }
 
             .logo-image {
@@ -599,6 +602,8 @@
 
             .nihti-mascot-image {
                 width: 350px;
+                mask-image: none;
+                -webkit-mask-image: none;
             }
 
             .hero-text {
