@@ -1,0 +1,8 @@
+# Robots.txt for Coyote Time Publishing
+# https://coyotetimepublishing.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://coyotetimepublishing.com/sitemap.xml
